@@ -1,0 +1,85 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 5 key-value pairs.
+Below are 5 of them:
+ 1 key:                     cat_01.jpg  label:                        cat
+ 2 key:                   pizza_01.jpg  label:                      pizza
+ 3 key:                   corgi_01.jpg  label:                      corgi
+ 4 key:                  beagle_01.jpg  label:                     beagle
+ 5 key:                  beagle_02.jpg  label:                     beagle
+
+     MATCH:
+
+                    cat_01.jpg: 
+Real:                        cat   Classifier:      siamese cat, siamese, cat
+
+                  pizza_01.jpg: 
+Real:                      pizza   Classifier:               pizza, pizza pie
+
+ NOT A MATCH:
+
+                  corgi_01.jpg: 
+Real:                      corgi   Classifier: dingo, warrigal, warragal, canis dingo
+
+                 beagle_01.jpg: 
+Real:                     beagle   Classifier:  walker hound, walker foxhound
+
+                 beagle_02.jpg: 
+Real:                     beagle   Classifier:                    toy terrier
+
+# Total Images 5 # Matches: 2 # NOT Matches: 3
+
+     MATCH:
+
+                    cat_01.jpg: 
+Real:                        cat   Classifier:      siamese cat, siamese, cat  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                  pizza_01.jpg: 
+Real:                      pizza   Classifier:               pizza, pizza pie  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                  corgi_01.jpg: 
+Real:                      corgi   Classifier: dingo, warrigal, warragal, canis dingo  
+PetLabelDog: 1  ClassLabelDog: 0
+
+                 beagle_01.jpg: 
+Real:                     beagle   Classifier:  walker hound, walker foxhound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                 beagle_02.jpg: 
+Real:                     beagle   Classifier:                    toy terrier  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 5 # Matches: 2 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  5  N Dog Images:  3  N NotDog Images:  2 
+Pct Corr dog:  66.7 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  5  N Dog Images:  3  N NotDog Images:  2 
+Pct Corr dog:  66.7 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+{'n_dogs_img': 3, 'n_notdogs_img': 2, 'n_match': 2, 'n_correct_dogs': 2, 'n_correct_notdogs': 2, 'n_correct_breed': 0, 'n_images': 5, 'pct_match': 40.0, 'pct_correct_dogs': 66.66666666666666, 'pct_correct_breed': 0.0, 'pct_correct_notdogs': 100.0}
+Model: vgg
+Number of Dog Images: 3
+Number of Non-Dog Images: 2
+Percentage of correct matches: 40.00
+Percentage of correctly classified dogs: 66.67
+Percentage of correctly classified dog breeds: 0.00
+Percentage of correctly classified Non-Dogs: 100.00
+
+Misclassified Images: (Dogs classifed as Non-dogs or Non-dogs classified as dogs:
+	corgi_01.jpg was classified as dingo, warrigal, warragal, canis dingo
+
+Misclassified Breed Images: (Dgs classifed as the wrong breed:
+	beagle_01.jpg was classified as walker hound, walker foxhound
+	beagle_02.jpg was classified as toy terrier
+
+
+Elapsed time: 00:00:02

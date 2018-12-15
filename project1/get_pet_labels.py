@@ -42,7 +42,6 @@ def get_pet_labels(image_dir):
     """
     img_files = listdir(image_dir) 
     pet_labels = [[' '.join(dog_name.split(".")[0].split("_")[:-1]).lower()] for dog_name in img_files]
-    test_dict = dict(zip(img_files, pet_labels))
 
     '''Convert the 2 lists created into a dictionary with the image file names as the key and the pet labels as the value'''
     return dict(zip(img_files, pet_labels))
