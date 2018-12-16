@@ -36,8 +36,9 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    img_files = listdir(image_dir) 
-    pet_labels = [[' '.join(img.split(".")[0].split("_")[:-1]).lower().strip()] for img in img_files if not img.startswith('.')]
+    img_files = [img for img in listdir(image_dir) if not img.startswith(".")]
+    
+    pet_labels = [[' '.join(img.split(".")[0].split("_")[:-1]).lower().strip()] for img in img_files]
 
     '''Convert the 2 lists created into a dictionary with the image file names as the key and the pet labels as the value'''
     return dict(zip(img_files, pet_labels))
